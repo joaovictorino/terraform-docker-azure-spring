@@ -1,5 +1,5 @@
 FROM maven:3.6-jdk-11-slim as BUILD
-COPY . /src
+COPY springapp/. /src
 WORKDIR /src
 RUN mvn package -DskipTests
 
