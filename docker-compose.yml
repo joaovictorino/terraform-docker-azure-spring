@@ -16,7 +16,7 @@ services:
       - MYSQL_TCP_PORT=3306
 
   app:
-    build: springapp
+    build: .
     restart: always
     networks:
       - petclinic
