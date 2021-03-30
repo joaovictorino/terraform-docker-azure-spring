@@ -8,11 +8,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class BrowserTest {
     @Test
     public void shouldOpenBrowser() {
-        ChromeOptions options = new ChromeOptions();
-        options.setBinary("/mnt/c/'Program Files (x86)'/Google/Chrome/Application/chrome.exe");
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized"); // open Browser in maximized mode
+        options.addArguments("--disable-infobars"); // disabling infobars
+        options.addArguments("--disable-extensions"); // disabling extensions
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--no-sandbox"); // Bypass OS security model
         WebDriver browser = new ChromeDriver(options);
         browser.navigate().to("http://localhost:8080");
-        browser.quit();
     }
 }
