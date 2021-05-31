@@ -1,3 +1,7 @@
 docker build -t springapp .
 
-docker tag springapp:latest aulainfraacr.azurecr.io/springapp:latest
+docker tag springapp:latest auladockeracr.azurecr.io/springapp:latest
+
+terraform init
+
+terraform apply

@@ -20,7 +20,7 @@ resource "azurerm_resource_group" "example" {
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                     = "aulainfraacr"
+  name                     = "auladockeracr"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
   sku                      = "Basic"
@@ -64,7 +64,7 @@ resource "azurerm_container_group" "example" {
 
   container {
     name   = "springapp"
-    image  = "aulainfraacr.azurecr.io/springapp"
+    image  = "auladockeracr.azurecr.io/springapp"
     cpu    = "0.5"
     memory = "1.5"
     
@@ -94,6 +94,6 @@ resource "null_resource" "upload_image" {
         order = azurerm_container_registry.acr.id
     }
     provisioner "local-exec" {
-      command = "az acr login --name aulainfraacr && docker push aulainfraacr.azurecr.io/springapp:latest && sleep 20"
+      command = "az acr login --name auladockeracr && docker push auladockeracr.azurecr.io/springapp:latest && sleep 20"
     }
 }
