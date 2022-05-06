@@ -39,4 +39,7 @@ Subir a imagem no Registry do Azure
 docker push auladockeracr.azurecr.io/springapp:latest
 ````
 
+Acessar a aplicação
+````sh
 curl http://aulainfraacg.eastus.azurecontainer.io:8080
+````
