@@ -25,10 +25,6 @@ resource "azurerm_container_registry" "acr" {
   location                 = azurerm_resource_group.example.location
   sku                      = "Basic"
   admin_enabled            = true
-
-  depends_on = [
-    azurerm_resource_group.example
-  ]
 }
 
 resource "azurerm_mysql_server" "example" {
@@ -110,8 +106,8 @@ resource "azurerm_container_group" "example" {
 
   depends_on = [
     azurerm_container_registry.acr,
+    azurerm_mysql_database.example,
     null_resource.upload_image,
-    azurerm_mysql_database.example
   ]
 }
 
