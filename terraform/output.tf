@@ -3,5 +3,5 @@ output "address_containerapps" {
 }
 
 output "address_aci" {
-  value = "http://${azurerm_container_group.aci-aula-spring.fqdn}:8080"
+  value = "http://${azurerm_container_group.aci-aula-spring.fqdn}"
 }

@@ -19,7 +19,7 @@ resource "azurerm_container_group" "aci-aula-spring" {
     memory = "2"
 
     ports {
-      port     = 8080
+      port     = 80
       protocol = "TCP"
     }
 

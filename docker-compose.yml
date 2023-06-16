@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 networks:
   petclinic:
@@ -24,7 +24,7 @@ services:
     networks:
       - petclinic
     ports:
-      - 8080:8080
+      - 80:80
     volumes:
       - myapp:/home
     depends_on:

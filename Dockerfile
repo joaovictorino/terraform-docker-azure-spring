@@ -4,6 +4,6 @@ WORKDIR /src
 RUN mvn package -DskipTests
 
 FROM openjdk:11.0-jre
-EXPOSE 8080
+EXPOSE 80
 COPY --from=BUILD /src/target/spring-petclinic-2.4.0.BUILD-SNAPSHOT.jar /app.jar
-ENTRYPOINT ["java","-Dspring.profiles.active=mysql","-jar","/app.jar"]
+ENTRYPOINT ["java","-Dspring.profiles.active=mysql","-jar","/app.jar", "--server.port=80"]

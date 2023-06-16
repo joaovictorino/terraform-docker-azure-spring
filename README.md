@@ -50,5 +50,5 @@ docker push acraulaspring.azurecr.io/springapp:latest
 Acessar a aplicação
 
 ```sh
-curl http://aciaulaspring.eastus.azurecontainer.io:8080
+curl http://aciaulaspring.eastus.azurecontainer.io
 ```
