@@ -6,6 +6,6 @@ docker tag springapp:latest acraulaspring.azurecr.io/springapp:latest
 
 cd terraform
 
-terraform init -upgrade
+terraform init
 
 terraform apply -auto-approve
