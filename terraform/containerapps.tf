@@ -81,6 +81,13 @@ resource "azapi_resource" "app-aula-spring" {
       }
     }
   })
+
+  depends_on = [
+    azurerm_container_registry.acr-aula-spring,
+    azurerm_mysql_flexible_database.db-aula-spring,
+    null_resource.upload_image,
+  ]
+
 }
 
 #resource "azurerm_container_app" "app-aula-spring" {
