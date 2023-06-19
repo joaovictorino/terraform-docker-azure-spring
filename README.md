@@ -34,21 +34,3 @@ Executar o Terraform
 ```sh
 terraform apply -auto-approve
 ```
-
-Logar no Registry do Azure
-
-```sh
-az acr login --name acraulaspring
-```
-
-Subir a imagem no Registry do Azure
-
-```sh
-docker push acraulaspring.azurecr.io/springapp:latest
-```
-
-Acessar a aplicação
-
-```sh
-curl http://aciaulaspring.eastus.azurecontainer.io
-```
