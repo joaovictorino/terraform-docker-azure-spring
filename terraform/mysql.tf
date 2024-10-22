@@ -4,14 +4,11 @@ resource "azurerm_mysql_flexible_server" "srv-db-aula-spring" {
   resource_group_name = azurerm_resource_group.rg-aula-spring.name
 
   sku_name = "B_Standard_B1s"
-  version  = "8.0.21"
-  zone     = 3
 
   administrator_login    = "mysqladminun"
   administrator_password = "easytologin4once!"
 
   backup_retention_days        = 7
-  geo_redundant_backup_enabled = false
 }
 
 resource "azurerm_mysql_flexible_database" "db-aula-spring" {

@@ -18,5 +18,5 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg-aula-spring" {
   name     = "rg-aula-spring"
-  location = "eastus"
+  location = "eastus2"
 }
