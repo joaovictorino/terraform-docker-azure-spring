@@ -8,7 +8,7 @@ resource "azurerm_mysql_flexible_server" "srv-db-aula-spring" {
   administrator_login    = "mysqladminun"
   administrator_password = "easytologin4once!"
 
-  backup_retention_days        = 7
+  backup_retention_days = 7
 }
 
 resource "azurerm_mysql_flexible_database" "db-aula-spring" {

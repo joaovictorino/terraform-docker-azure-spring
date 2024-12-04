@@ -66,7 +66,6 @@ resource "azurerm_container_app" "app-aula-spring" {
     max_replicas = 4
   }
 
-
   depends_on = [
     azurerm_container_registry.acr-aula-spring,
     azurerm_mysql_flexible_database.db-aula-spring,
